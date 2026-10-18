@@ -104,7 +104,12 @@ export function SuggestedUserRow({
                 href={show(user)}
                 className="group flex min-w-0 flex-1 items-center gap-3"
             >
-                <UserAvatar user={user} className="size-9" />
+                <span
+                    className="flex shrink-0 rounded-full border-2 p-0.5"
+                    style={{ borderColor: laneColor(user.lane) }}
+                >
+                    <UserAvatar user={user} className="size-9" />
+                </span>
                 <span className="min-w-0">
                     <span className="block truncate text-sm font-semibold group-hover:underline">
                         {user.name}
@@ -146,7 +151,7 @@ function SuggestedUsersSkeleton({
                     aria-hidden
                     className={cn('flex items-center gap-3', rowClassName)}
                 >
-                    <Skeleton className="size-9 shrink-0 rounded-full" />
+                    <Skeleton className="size-11 shrink-0 rounded-full" />
                     <span className="flex-1">
                         <Skeleton className="my-[3px] h-3.5 w-28" />
                         <Skeleton className="my-0.5 h-3 w-20" />
